@@ -1,0 +1,29 @@
+# Develop a Python function, Average, that will calculate the average of the numbers in a list.  The 
+# only input argument is a list of numbers and the function should return the average.  Run your 
+# function then test it in the Python shell.  Do not use statistics.mean – write your own code to 
+# compute the average.
+def Average(List):
+    Sum = 0
+    for each in List:
+        Sum += each
+    return Sum/len(List)
+# Develop a Python function, StDev, that will calculate the standard deviation of the numbers in a list. 
+# The  only  input  argument  is  a  list  of  numbers  and  the  function  should  return  the  standard deviation. 
+# The formula for the standard deviation 
+def StDev(List):
+    Sum = 0
+    for each in List:
+        Sum += (each-Average(List))**2
+    return (Sum/len(List))**0.5
+# Download the text file, Grades.txt, from the Community site. The file Grades.txt, has a single 
+# column of numerical values.  Develop a Python script that will open the file for reading, then 
+# store the values in a list.  The script should then use your functions developed in Part A and B to 
+# find the average and standard deviation for the scores and output these values to the Python shell 
+# using one place behind the decimal. 
+FileOpen = open("Grades.txt", "r")
+FileList = []
+for each in FileOpen:
+    FileList.append(float(each))
+FileOpen.close()
+print(Average(FileList))
+print(StDev(FileList))

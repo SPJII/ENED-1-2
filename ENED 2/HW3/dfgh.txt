@@ -1,0 +1,8 @@
+σX	standard deviation
+x	sample mean
+s	sample standard deviation
+zx	standard score
+X ~	distribution of X
+x bar median
+std(X)	standard deviation
+μ	population mean

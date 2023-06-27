@@ -1,0 +1,17 @@
+# Develop a Python script that will open the file for reading then determine the maximum snowfall 
+# in Cincinnati and the date on which the maximum snowfall occurred.  Print the results to IDLE 
+# using two places behind the decimal point for the snowfall. 
+SnowFallDate = []
+SnowFall = []
+SnowFallCount = 0
+SnowFile = open("Snow_Fall.txt", "r")
+for each in SnowFile:
+    SnowFallDate.append(each.split()[0])
+    SnowFall.append(float(each.split()[1]))
+print("The maximum snowfall in Cincinnati was", max(SnowFall), "on", SnowFallDate[SnowFall.index(max(SnowFall))])
+# Modify your script from Part A to count the total number of days that the snowfall exceeded 
+# 1 inch.  Output (print) the percentage of days that the snowfall exceed 1 inch. 
+for each in SnowFall:
+    if each > 1:
+        SnowFallCount += 1
+print("The percentage of days that the snowfall exceeded 1 inch is", SnowFallCount/len(SnowFall)*100, "%")
